@@ -17,11 +17,11 @@ class Teacher{
     void changeDept(string newDept){
         dept= newDept;
     }
-    //setter
+    //setter - are used to set the value of private members
         void setSalary(double s){
             salary = s;
         }
-        //getter
+        //getter - are used to the value of private members
             double getSalary(){
                 return salary;
             }
@@ -32,10 +32,12 @@ class Teacher{
 int main(){
   Teacher t1;
     t1.name = "Gourav";
-    t1.dept ="Computer Science"
-    t1.subject ="C++ Programming";
-    t1.salary = 50000;
-  
+    t1.dept ="Computer Science";
+    t1.setSalary(5000);
+
+    cout<< t1.name << endl;
+    cout<< t1.dept << endl;
+    cout<< t1.getSalary() << endl;
 
 
     return 0;
