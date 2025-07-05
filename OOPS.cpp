@@ -33,8 +33,11 @@ class Student {
 
 int main (){
     Student s1("Rahul Kumar", 9.5);
-
     Student s2(s1);
-    s2.getInfo();
+
+
+    s1.getInfo();
+    *(s2.cgpaPtr) = 10.0;
+    s1.getInfo();
     return 0;
 }
