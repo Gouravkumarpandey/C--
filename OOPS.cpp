@@ -1,46 +1,40 @@
 #include <iostream>
 #include <string>
+
 using namespace std;
 
-class Teacher{
-    private:     
-    double salary;
+class Student {
 
-   public:
-    //properties // attributes
-    string  name ;
-    string  dept;
-    string subject ;
+    public:
+     string  name;
+     double* cgpaPtr;
 
+     Student(string name, double cgpa){ // This is constructor
+        this->name = name;
+        cgpaPtr = new double;
+        *cgpaPtr = cgpa;
+     }
 
-    //copy constructor
-    Teacher(Teacher &orgObj){ //pass by reference 
-        this ->name = orgObj.name;
-        this-> dept = orgObj.dept;
-        this->subject = orgObj.subject;
-        this->salary = orgObj.salary;
-    }
+     Student(const Student &obj){ // Copy constructor
+        this->name = obj.name;
+        cgpaPtr = new double;
+        *cgpaPtr = *(obj.cgpaPtr);
+     }
 
-    void changeDept(string newDept){
-        dept= newDept;
-    }
-    //setter - are used to set the value of private members
-       
-    void getInfo(){
-        const << "name : " << name << endl;
-        const << "subject : " << subject << endl;
-    }
-    
+     Student() { // Destructor
+        delete cgpaPtr;
+     }
 
+     void getInfo() {
+        cout << "name: "<< name << endl;
+        cout << "cgpa : " << *cgpaPtr << endl;
+     }
 };
 
-int main(){
-  Teacher t1("Gourav","Computer Science","C++",25000 );
-  //t1.getInfo();
+int main (){
+    Student s1("Rahul Kumar", 9.5);
 
-  Teacher t2(t1); //copy constructor - invoke
-  t2.getInfo();
-
-
+    Student s2(s1);
+    s2.getInfo();
     return 0;
 }
