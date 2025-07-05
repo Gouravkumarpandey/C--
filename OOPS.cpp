@@ -15,10 +15,10 @@ class Student {
         *cgpaPtr = cgpa;
      }
 
-     Student(const Student &obj){ // Copy constructor
+     Student(const Student &obj){ // deep Copy constructor 
         this->name = obj.name;
         cgpaPtr = new double;
-        *cgpaPtr = *(obj.cgpaPtr);
+        *cgpaPtr = *(obj.cgpaPtr);//deep copy
      }
 
      Student() { // Destructor
@@ -33,7 +33,7 @@ class Student {
 
 int main (){
     Student s1("Rahul Kumar", 9.5);
-    Student s2(s1);
+    Student s2(s1);//neha kumari
 
 
     s1.getInfo();
