@@ -12,32 +12,34 @@ class Teacher{
     string  dept;
     string subject ;
 
-    //methods // member functions
+
+    //copy constructor
+    Teacher(Teacher &orgObj){ //pass by reference 
+        this ->name = orgObj.name;
+        this-> dept = orgObj.dept;
+        this->subject = orgObj.subject;
+        this->salary = orgObj.salary;
+    }
 
     void changeDept(string newDept){
         dept= newDept;
     }
     //setter - are used to set the value of private members
-        void setSalary(double s){
-            salary = s;
-        }
-        //getter - are used to the value of private members
-            double getSalary(){
-                return salary;
-            }
+       
+    void getInfo(){
+        const << "name : " << name << endl;
+        const << "subject : " << subject << endl;
+    }
     
 
 };
 
 int main(){
-  Teacher t1;
-    t1.name = "Gourav";
-    t1.dept ="Computer Science";
-    t1.setSalary(5000);
+  Teacher t1("Gourav","Computer Science","C++",25000 );
+  //t1.getInfo();
 
-    cout<< t1.name << endl;
-    cout<< t1.dept << endl;
-    cout<< t1.getSalary() << endl;
+  Teacher t2(t1); //copy constructor - invoke
+  t2.getInfo();
 
 
     return 0;
