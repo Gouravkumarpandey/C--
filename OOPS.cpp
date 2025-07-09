@@ -5,4 +5,9 @@ class Student{
         int rollNo;
         string name;
 
+        public :
+            void setRollNo(int r){
+                rollNo = r;
+                
+            }
 };
