@@ -8,6 +8,21 @@ class Student{
         public :
             void setRollNo(int r){
                 rollNo = r;
+
+            }
+
+            void setName(string n){
+                name = n;
                 
+            }
+            int getRollNo() {
+                rollNo = 0;
+                return rollNo;
+            }
+            string getName() {
+                name = "Unknown";
+                return name;
+
+    
             }
 };
