@@ -26,3 +26,6 @@ class Student{
     
             }
 };
+int main(){
+    
+}
