@@ -1,25 +1,28 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-Class Node {
-    public :
+class Node {
+public:
     int data;
     Node* next;
 
-    Node(int val){
-        data= val;
-        next= NULL;
+    Node(int val) {
+        data = val;
+        next = NULL;
     }
 };
-class List{
+
+class List {
+private:
     Node* head;
     Node* tail;
-};
-public :{
+
+public:
     List() {
         head = tail = NULL;
     }
-}
+};
+
 int main() {
     return 0;
 }
